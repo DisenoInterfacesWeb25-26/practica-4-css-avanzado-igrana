@@ -18,6 +18,158 @@
 --c-marron-palido-palido-palido: #fff9f2;
 }
 
+/*Actividad 1.2 Visualización en ordenador, tableta y móvil*/
+/*Para odenador*/
+/*----------------------------------------------------------------------------*/
+@media (min-width: 1200px){
+
+  * {
+    font-size: 1em;
+  }
+
+  header {
+    position: fixed;
+    height: 100px;
+  }
+
+  #logo-portada {
+    width: 150px;
+  }
+
+  nav {
+    position: fixed; 
+    top: 100px;
+    left: 16.7%;
+    width: 83.3%;
+    font-size: 1.25em;
+  }
+
+  aside {
+    background-color: var(--c-verde-muy-muy-claro);
+    width: 20%;
+    margin: 100px 0 0 0;
+    padding: 40px 10px 20px 20px;
+    font-size: 1em;
+  }
+
+  main {
+    margin-top: 150px;
+  }
+
+  .seccion-contenedor-articulos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2%;
+    padding: 10px;
+  }
+
+  .whatsapp-link-fixed {
+    width: 100px;
+  }
+
+}
+
+/*Para tablet*/
+@media (min-width: 700px) and (max-width: 1199px) {
+
+  * {
+    font-size: 0.97em;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  nav {
+    position: fixed; 
+    left: 16.7%;
+    width: 83.3%;
+    background-color: var(--c-blanco);
+    font-size: 1.25em;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+  }
+  
+  .nav-menu {
+    position: relative;
+    font-size: 1.1em;
+  }
+
+  #logo-portada {
+    width: 100px;
+  }
+
+  aside {
+    background-color: var(--c-verde-muy-muy-claro);
+    width: 20%;
+    margin: 0px;
+    padding: 20px 10px 20px 20px;
+    font-size: 1em;
+  }
+
+  main {
+    margin-top: 150px;
+  }
+
+  .seccion-contenedor-articulos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2%;
+    padding: 10px;
+  }
+
+  .whatsapp-link-fixed {
+    width: 70px;
+  }
+}
+
+/*Para móvil*/
+@media (max-width: 699px){
+
+  * {
+    font-size: 0.97em;
+  }
+
+  header {
+    position: relative;
+    top: 0px;
+    height: 100%;
+  }
+
+  #logo-portada {
+    width: 80px;
+  }
+
+  nav {
+    position: relative;
+    width: 100%;
+    background-color: var(--c-blanco);
+    font-size: 0.8em;
+    text-align: center;
+    margin: 0px;
+    padding: 3px;
+  } 
+
+  aside {
+    visibility: hidden;
+    width: 0px;
+    margin: 0px;
+    padding :0px;
+  }
+
+  .seccion-contenedor-articulos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2%;
+    padding: 10px;
+  }
+
+  .whatsapp-link-fixed {
+    width: 50px;
+  }
+
+}
 
 /*Scrollbar-------------*/
 ::-webkit-scrollbar {
@@ -37,49 +189,47 @@
   background: var(--c-marron-claro);
 }
 
-/*Letras-------------*/
 
 /*Importo la fuente Roboto*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-h1 {
-  font-size: 2.5em;
-  color: var(--c-naranja);
-  text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
+  h1 {
+    font-size: 2.5em;
+    color: var(--c-naranja);
+    text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
 
-h2 {
-  font-size: 1.5em;
-  color: var(--c-naranja);
-  text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
+  h2 {
+    font-size: 1.5em;
+    color: var(--c-naranja);
+    text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
 
-h3 {
-  font-size: 1.20em;
-  color: var(--c-verde-primario);
-}
+  h3 {
+    font-size: 1.20em;
+    color: var(--c-verde-primario);
+  }
 
-h4 {
-  font-size: 1em;
-  color: var(--c-marron-claro);
-}
+  h4 {
+    font-size: 1em;
+    color: var(--c-marron-claro);
+  }
 
-h5 {
-  font-size: 1.25em;
-  color: var(--c-marron-palido);
-}
+  h5 {
+    font-size: 1em;
+    color: var(--c-marron-palido);
+  }
 
-.subtitle {
-  color: var(--c-marron-palido);
-  padding-left: 30px;
-}
-
+  .subtitle {
+    color: var(--c-marron-palido);
+    padding-left: 30px;
+  }
+  
 /*General----------------------------------*/
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-size: 1em;
 }
 
 body {
@@ -90,13 +240,10 @@ body {
 
 /*Cabecera-------------------------------------*/
 header {
-  position: fixed; 
-  top: 0px;
   width: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
   background-color:var(--c-verde-muy-claro);
-  height: 100px;
   margin: 0px;
   padding: 10px;
 }
@@ -118,18 +265,9 @@ header a:hover {
   color: var(--c-marron);
 }
 
-#logo-portada {
-    width: 150px;
-}
-
 /*Menú nav-------------------------*/
 nav {
-  position: fixed; 
-  top: 100px;
-  left: 16.7%;
-  width: 83.3%;
   background-color: var(--c-blanco);
-  font-size: 1.25em;
   text-align: center;
   margin: 0px;
   padding: 10px;
@@ -171,10 +309,6 @@ nav a:active {
 /*Menú aside----------*/
 aside {
   background-color: var(--c-verde-muy-muy-claro);
-  width: 20%;
-  margin: 100px 0 0 0;
-  padding: 40px 10px 20px 20px;
-  font-size: 1em;
 }
 
 aside ul {
@@ -219,7 +353,6 @@ main {
   background-image: url(../images/fondo_calido.png);
   margin: 0px;
   width: 100%;
-  margin-top: 150px;
   padding-top: 1%;
   padding-left: 3%;
   padding-right: 3%;
@@ -270,13 +403,6 @@ section {
 
 .subsection-header {
   padding: 20px;
-}
-
-.seccion-contenedor-articulos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2%;
-  padding: 10px;
 }
 
 .section-article-header {
@@ -364,16 +490,15 @@ footer {
   padding: 10px;
 }
 
-.whatsapp-link-fixed {
-  position: fixed;
-  right: 30px;
-  bottom: 20px;
-  width: 100px;
-  background-color: var(--c-blanco);
-  padding: 10px;
-  border-radius: 2em;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-}
+  .whatsapp-link-fixed {
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    background-color: var(--c-blanco);
+    padding: 10px;
+    border-radius: 2em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
 
 .whatsapp-link-fixed img {
   width: 100%;
