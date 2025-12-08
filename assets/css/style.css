@@ -18,7 +18,30 @@
 --c-marron-palido-palido-palido: #fff9f2;
 }
 
-/*Actividad 1.2 Visualización en ordenador, tableta y móvil*/
+/*PRÁCTICA 4. Actividad 4.7.1. Selector para imágenes sin atributo alt*/
+
+img:not([alt]) {
+  border: solid 5px red;
+}
+
+/*PRÁCTICA 4.Actividad 5.3.1. Transiciones (0,5 puntos)
+Actividad 5.4.1. Transformaciones, desplazar y agrandar las imágenes al hacer hover*/
+.img-transicion {
+  position: relative;
+  z-index: 5;
+  display: inline-block;   /* para que las imágenes puedan crecer */
+  line-height: 0;          /* elimina espacios invisibles */
+  transition: border, box-shadow 0.2s linear, transform 0.2s linear;
+}
+
+.img-transicion:hover {
+  box-shadow: 10px 12px 14px 2px hsla(88, 92%, 81%, 0.848);
+  border: 3px solid rgb(209, 246, 167);
+  transform: scale(1.1) translate(5px, -10px);
+  z-index: 9;
+}
+
+/*PRÁCTICA 4. Actividad 1.2 Visualización en ordenador, tableta y móvil*/
 /*Para odenador*/
 /*----------------------------------------------------------------------------*/
 @media (min-width: 1200px){
@@ -30,6 +53,8 @@
   header {
     position: fixed;
     height: 100px;
+    /*Para que no se superpongan las imágenes al hacer s croll*/
+    z-index: 10;
   }
 
   #logo-portada {
@@ -171,6 +196,18 @@
 
 }
 
+/*PRÁCTICA 4. Actividad 4.2.1. Medios definidos con */
+/*Para eliminar los botones si se imprime la página*/
+@media print {
+  menu {
+    visibility: hidden;
+  }
+
+  aside {
+    visibility: hidden;
+  }
+}
+
 /*Scrollbar-------------*/
 ::-webkit-scrollbar {
   width: 10px;
@@ -271,6 +308,8 @@ nav {
   text-align: center;
   margin: 0px;
   padding: 10px;
+  /*PRÁCTICA 4. Actividad 4.6.1. Sombras*/
+  box-shadow: 10px 12px 14px 2px rgba(0,0,0,0.47);
 }
 
 nav a:link {
@@ -299,6 +338,7 @@ nav a:active {
 }
 
 /*Contenedor central-----*/
+/*PRÁCTICA 4. Actividad 4.11.1. Flexbox  */
 .central-container {
   display: flex;
   flex-direction: row;
@@ -490,15 +530,15 @@ footer {
   padding: 10px;
 }
 
-  .whatsapp-link-fixed {
-    position: fixed;
-    right: 30px;
-    bottom: 20px;
-    background-color: var(--c-blanco);
-    padding: 10px;
-    border-radius: 2em;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  }
+.whatsapp-link-fixed {
+  position: fixed;
+  right: 30px;
+  bottom: 20px;
+  background-color: var(--c-blanco);
+  padding: 10px;
+  border-radius: 2em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
 .whatsapp-link-fixed img {
   width: 100%;
