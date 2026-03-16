@@ -1,7 +1,7 @@
 /*Paleta de colores----------------------*/
 :root {
 /*Colores verdes*/
---c-verde-primario: #149a02;
+--c-verde-primario: #0a5200;
 --c-verde-oscuro: #375b01;
 --c-verde-claro: #7cae32;
 --c-verde-muy-claro: #bafb95;
@@ -204,6 +204,10 @@ section {
 
 .subsection-header {
   padding: 20px;
+}
+
+.section-article {
+  padding-right: 20%;
 }
 
 .section-article-header {
@@ -432,7 +436,7 @@ table tr td {
   nav {
     position: fixed; 
     top: 100px;
-    left: 16.7%;
+    left: 15%;
     width: 100%;
     font-size: 1.25em;
     padding:7px;
@@ -446,7 +450,7 @@ table tr td {
     width: 15%;
     height: 100%;
     background-color: var(--c-verde-muy-muy-claro);
-    padding: 40px 10px 20px 20px;
+    padding: 80px 10px 20px 20px;
     font-size: 1em;
     z-index: 9;
   }
