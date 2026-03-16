@@ -1,25 +1,28 @@
 /*Paleta de colores----------------------*/
 :root {
 /*Colores verdes*/
---c-verde-primario: #528600;
---c-verde-oscuro: #68af01;
+--c-verde-primario: #149a02;
+--c-verde-oscuro: #375b01;
 --c-verde-claro: #7cae32;
---c-verde-muy-claro: #dcfab5;
---c-verde-muy-muy-claro: #effddd;
+--c-verde-muy-claro: #bafb95;
+--c-verde-muy-muy-claro: #f7ffed;
 --c-blanco: #ffffff;
 
 /*Colores de contraste*/
---c-naranja: #ff9635;
---c-marron: #5e3e39;
---c-marron-claro: #805d5c;
---c-marron-palido: #595959;
+--c-naranja: #ff5805;
+--c-marron: #b32f1b;
+--c-marron-claro: #8b4745;
+--c-marron-palido: #6f0400;
 --c-marron-palido-girs: #565656;
---c-marron-palido-palido: #ffffff;
---c-marron-palido-palido-palido: #fffcf8;
+}
+
+/*Para la accesibilidad*/
+a:focus-visible {
+  outline: 5px solid var(--c-naranja);
+  background-color: #f4ff2b;
 }
 
 /*PRÁCTICA 4. Actividad 4.7.1. Selector para imágenes sin atributo alt*/
-
 img:not([alt]) {
   border: solid 5px red;
 }
@@ -35,234 +38,12 @@ Actividad 5.4.1. Transformaciones, desplazar y agrandar las imágenes al hacer h
 }
 
 .img-transicion:hover {
-  box-shadow: 10px 12px 14px 2px hsla(88, 92%, 81%, 0.848);
+  box-shadow: 5px 5px 5px 5px hsla(88, 92%, 81%, 0.848);
   border: 3px solid rgb(209, 246, 167);
-  transform: scale(1.1) translate(5px, -10px);
+  transform: scale(1.2) translate(5px, -10px);
   z-index: 9;
 }
 
-/*PRÁCTICA 4. Actividad 1.2 Visualización en ordenador, tableta y móvil*/
-/*Para odenador*/
-/*----------------------------------------------------------------------------*/
-@media (min-width: 1200px){
-
-  * {
-    font-size: 1em;
-  }
-
-  header {
-    position: fixed;
-    height: 100px;
-    /*Para que no se superpongan las imágenes al hacer s croll*/
-    z-index: 10;
-  }
-
-  #logo-portada {
-    width: 150px;
-  }
-
-  nav {
-    position: fixed; 
-    top: 100px;
-    left: 16.7%;
-    width: 83.3%;
-    font-size: 1.25em;
-    z-index: 10;
-  }
-
-  aside {
-    background-color: var(--c-verde-muy-muy-claro);
-    width: 20%;
-    margin: 100px 0 0 0;
-    padding: 40px 10px 20px 20px;
-    font-size: 1em;
-  }
-
-  main {
-    margin-top: 150px;
-  }
-
-  .seccion-contenedor-articulos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2%;
-    padding: 10px;
-  }
-
-  .whatsapp-link-fixed {
-    width: 100px;
-  }
-
-}
-
-/*Para tablet*/
-@media (min-width: 700px) and (max-width: 1199px) {
-
-  * {
-    font-size: 0.97em;
-  }
-
-  header {
-    height: 100px;
-  }
-
-  nav {
-    position: fixed; 
-    left: 16.7%;
-    width: 83.3%;
-    background-color: var(--c-blanco);
-    font-size: 1.25em;
-    text-align: center;
-    margin: 0px;
-    padding: 10px;
-  }
-  
-  .nav-menu {
-    position: relative;
-    font-size: 1.1em;
-  }
-
-  #logo-portada {
-    width: 100px;
-  }
-
-  aside {
-    background-color: var(--c-verde-muy-muy-claro);
-    width: 20%;
-    margin: 0px;
-    padding: 20px 10px 20px 20px;
-    font-size: 1em;
-  }
-
-  main {
-    margin-top: 150px;
-  }
-
-  .seccion-contenedor-articulos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2%;
-    padding: 10px;
-  }
-
-  .whatsapp-link-fixed {
-    width: 70px;
-  }
-}
-
-/*Para móvil*/
-@media (max-width: 699px){
-
-  * {
-    font-size: 0.97em;
-  }
-
-  header {
-    position: relative;
-    top: 0px;
-    height: 100%;
-  }
-
-  #logo-portada {
-    width: 80px;
-  }
-
-  nav {
-    position: relative;
-    width: 100%;
-    background-color: var(--c-blanco);
-    font-size: 0.8em;
-    text-align: center;
-    margin: 0px;
-    padding: 3px;
-  } 
-
-  aside {
-    visibility: hidden;
-    width: 0px;
-    margin: 0px;
-    padding :0px;
-  }
-
-  .seccion-contenedor-articulos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2%;
-    padding: 10px;
-  }
-
-  .whatsapp-link-fixed {
-    width: 50px;
-  }
-
-}
-
-/*PRÁCTICA 4. Actividad 4.2.1. Medios definidos con */
-/*Para eliminar los botones si se imprime la página*/
-@media print {
-  menu {
-    visibility: hidden;
-  }
-
-  aside {
-    visibility: hidden;
-  }
-}
-
-/*Scrollbar-------------*/
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--c-marron-palido-palido);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--c-marron-palido);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--c-marron-claro);
-}
-
-
-/*Importo la fuente Roboto*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-  h1 {
-    font-size: 2.5em;
-    color: var(--c-naranja);
-    text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  }
-
-  h2 {
-    font-size: 1.5em;
-    color: var(--c-naranja);
-    text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  }
-
-  h3 {
-    font-size: 1.20em;
-    color: var(--c-verde-primario);
-  }
-
-  h4 {
-    font-size: 1em;
-    color: var(--c-marron-claro);
-  }
-
-  h5 {
-    font-size: 1em;
-    color: var(--c-marron-palido);
-  }
-
-  .subtitle {
-    color: var(--c-marron-palido);
-    padding-left: 30px;
-  }
-  
 /*General----------------------------------*/
 * {
   margin: 0px;
@@ -276,25 +57,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-/*Cabecera-------------------------------------*/
-header {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color:var(--c-verde-muy-claro);
-  margin: 0px;
-  padding: 10px;
-}
-
-.header-languages {
-  padding: 10px;
-}
-
-header ul {
-  list-style-type: none;
-}
-
-header a {
+a {
   text-decoration: none;
   color: var(--c-marron-palido);
 }
@@ -302,15 +65,21 @@ header a {
 header a:hover {
   color: var(--c-marron);
 }
+/*Cabecera-------------------------------------*/
+header {
+  width: 100%;
+  background-color:var(--c-verde-muy-claro);
+}
+
+ul {
+  list-style-type: none;
+}
 
 /*Menú nav-------------------------*/
 nav {
   background-color: var(--c-blanco);
-  text-align: center;
-  margin: 0px;
-  padding: 10px;
   /*PRÁCTICA 4. Actividad 4.6.1. Sombras*/
-  box-shadow: 10px 12px 14px 2px rgba(0,0,0,0.47);
+  box-shadow: 5px 5px 7px 2px rgba(0,0,0,0.47);
 }
 
 nav a:link {
@@ -390,15 +159,6 @@ aside ul {
 }
 
 /*Sección principal----------------*/
-main {
-  background-image: url(../images/fondo_calido.png);
-  margin: 0px;
-  width: 100%;
-  padding-top: 1%;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-bottom: 8%;
-}
 
 .container-main {
   display: flex;
@@ -410,7 +170,7 @@ main {
   padding: 10px;
   list-style: none;
   color: var(--c-marron-palido);
-  background-color: var(--c-marron-palido-palido-palido);
+  background-color: var(--c-marron-blanco);
 }
 
 .breadcrumb a {
@@ -429,12 +189,12 @@ main {
 .section-header {
   border-bottom: 2px solid var(--c-marron-palido);
   padding: 10px;
-  background-color: var(--c-marron-palido-palido-palido);
+  background-color: var(--c-blancoo);
 }
 
 .container-sections {
   padding: 10px;
-  background-color: var(--c-marron-palido-palido-palido);
+  background-color: var(--c-marron-blanco);
 }
 
 section {
@@ -547,7 +307,7 @@ footer {
 
 /*Formulario-------------*/
 .container-form {
-  background-color: var(--c-marron-palido-palido-palido);
+  background-color: var(--c-blanco);
   padding: 20px;
   text-align: center;
 }
@@ -618,7 +378,7 @@ input[type=submit]:active {
 
 /*Tabla-----------------------*/
 .container-table {
-  background-color: var(--c-marron-palido-palido-palido);
+  background-color: var(--c-marron-blanco);
   margin: 0px;
   padding: 30px;
   font-size: 1em;
@@ -646,5 +406,278 @@ table tr :nth-child(odd) {
 table tr td {
   padding: 20px;
 }
+
+/*PRÁCTICA 4. Actividad 1.2 Visualización en ordenador, tableta y móvil*/
+/*Para odenador*/
+/*----------------------------------------------------------------------------*/
+@media (min-width: 1200px){
+
+  * {
+    font-size: 1em;
+  }
+
+  header {
+    position: fixed;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 15% 75% 10%;
+    padding: 15px;
+    z-index: 10;
+  }
+
+  #logo-portada {
+    width: 170px;
+  }
+
+  nav {
+    position: fixed; 
+    top: 100px;
+    left: 16.7%;
+    width: 100%;
+    font-size: 1.25em;
+    padding:7px;
+    z-index: 10;
+  }
+
+  aside {
+    position: fixed; 
+    top: 100px;
+    left: 0px;
+    width: 15%;
+    height: 100%;
+    background-color: var(--c-verde-muy-muy-claro);
+    padding: 40px 10px 20px 20px;
+    font-size: 1em;
+    z-index: 9;
+  }
+
+  main {
+    position: relative;
+    margin-top: 180px;
+    margin-left: 15%;
+    width: 85%;
+  }
+
+  .seccion-contenedor-articulos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2%;
+    padding: 10px;
+  }
+
+  .whatsapp-link-fixed {
+    width: 100px;
+  }
+
+}
+
+/*Para tablet*/
+@media (min-width: 700px) and (max-width: 1199px) {
+
+  * {
+    font-size: 0.97em;
+  }
+
+  header {
+    height: 100px;
+  }
+
+  header {
+    display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 0px;
+  padding: 10px;
+}
+.header-languages {
+  padding: 10px;
+}
+
+
+
+
+  nav {
+    position: fixed; 
+    left: 16.7%;
+    width: 83.3%;
+    background-color: var(--c-blanco);
+    font-size: 1.25em;
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+  }
+  
+  .nav-menu {
+    position: relative;
+    font-size: 1.1em;
+  }
+
+  #logo-portada {
+    width: 100px;
+  }
+
+  aside {
+    background-color: var(--c-verde-muy-muy-claro);
+    width: 20%;
+    margin: 0px;
+    padding: 20px 10px 20px 20px;
+    font-size: 1em;
+  }
+
+  main {
+    margin: 0px;
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 8%;
+  }
+
+  .seccion-contenedor-articulos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2%;
+    padding: 10px;
+  }
+
+  .whatsapp-link-fixed {
+    width: 70px;
+  }
+}
+
+/*Para móvil*/
+@media (max-width: 699px){
+
+  * {
+    font-size: 0.97em;
+  }
+
+  header {
+    position: relative;
+    top: 0px;
+    height: 100%;
+  }
+
+  header {
+    display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 0px;
+  padding: 10px;
+}
+.header-languages {
+  padding: 10px;
+}
+
+
+
+
+  #logo-portada {
+    width: 80px;
+  }
+
+  nav {
+    position: relative;
+    width: 100%;
+    background-color: var(--c-blanco);
+    font-size: 0.8em;
+    text-align: center;
+    margin: 0px;
+    padding: 3px;
+  } 
+
+  main {
+    margin: 0px;
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 8%;
+  }
+
+  aside {
+    visibility: hidden;
+    width: 0px;
+    margin: 0px;
+    padding :0px;
+  }
+
+  .seccion-contenedor-articulos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2%;
+    padding: 10px;
+  }
+
+  .whatsapp-link-fixed {
+    width: 50px;
+  }
+
+}
+
+/*PRÁCTICA 4. Actividad 4.2.1. Medios definidos con */
+/*Para eliminar los botones si se imprime la página*/
+@media print {
+  menu {
+    visibility: hidden;
+  }
+
+  aside {
+    visibility: hidden;
+  }
+}
+
+/*Scrollbar-------------*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-blanco);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-marron-palido);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-marron-claro);
+}
+
+
+/*Importo la fuente Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+  h1 {
+    font-size: 2.5em;
+    color: var(--c-naranja);
+    text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    color: var(--c-naranja);
+    text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+
+  h3 {
+    font-size: 1.20em;
+    color: var(--c-verde-primario);
+  }
+
+  h4 {
+    font-size: 1em;
+    color: var(--c-marron-claro);
+  }
+
+  h5 {
+    font-size: 1em;
+    color: var(--c-marron-palido);
+  }
+
+  .subtitle {
+    color: var(--c-marron-palido);
+    padding-left: 30px;
+  }
+  
 
 
